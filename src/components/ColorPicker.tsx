@@ -24,7 +24,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
         setInputs(prev => ({ ...prev, [id]: newColor }))
         // Save to localStorage
         localStorage.setItem(`colorPicker-${id}`, JSON.stringify(newColor));
-        console.log(inputs);
+      
     }
 
     const handleChange = (colorComponent: 'red' | 'green' | 'blue') => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +37,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
             <div className="mb-2 flex items-center gap-2">
                 <input
                     type="range"
-                    min={1}
+                    min={0}
                     max={255}
                     value={color.red}
                     onChange={handleChange('red')}
@@ -45,7 +45,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
                 />
                 <input
                     type="number"
-                    min={1}
+                    min={0}
                     max={255}
                     value={color.red}
                     onChange={handleChange('red')}
@@ -56,7 +56,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
             <div className="mb-2 flex items-center gap-2">
                 <input
                     type="range"
-                    min={1}
+                    min={0}
                     max={255}
                     value={color.green}
                     onChange={handleChange('green')}
@@ -64,7 +64,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
                 />
                 <input
                     type="number"
-                    min={1}
+                    min={0}
                     max={255}
                     value={color.green}
                     onChange={handleChange('green')}
@@ -75,7 +75,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
             <div className="mb-2 flex items-center gap-2">
                 <input
                     type="range"
-                    min={1}
+                    min={0}
                     max={255}
                     value={color.blue}
                     onChange={handleChange('blue')}
@@ -83,7 +83,7 @@ const ColorPicker = ({id, inputs, setInputs}: {id: number, inputs: Color[], setI
                 />
                 <input
                     type="number"
-                    min={1}
+                    min={0}
                     max={255}
                     value={color.blue}
                     onChange={handleChange('blue')}

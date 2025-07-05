@@ -21,7 +21,6 @@ const FunctionSelect = () => {
         }, []); 
 
     useEffect(() => {
-        console.log("Changing number of inputs to", selectedFunction.numberOfInputs);
         setNumberOfInputs(selectedFunction.numberOfInputs);
     }, [selectedFunction]);
 
@@ -36,7 +35,6 @@ const FunctionSelect = () => {
                 }`}
                 onClick={() => {
                     const newFunction = functions.find(f => f.id === fn.id) || functions[0];
-                    console.log(fn.id); 
                     setSelectedFunction(newFunction);
                     localStorage.setItem('selectedFunction', JSON.stringify(newFunction));
                 }}
